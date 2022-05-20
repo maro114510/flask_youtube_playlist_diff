@@ -1,5 +1,6 @@
 from googleapiclient.discovery import build
-from config import DEVELOPER_KEY
+# from config import DEVELOPER_KEY
+DEVELOPER_KEY = 'AIzaSyA37YNwWV6juiyPFaLjIFUCh6pCISCDGYY'
 
 # API権限の取得
 api_service_name = 'youtube'
