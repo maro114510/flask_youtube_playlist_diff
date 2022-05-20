@@ -12,7 +12,7 @@ new_data = video_titles(video_ids())
 # DBファイルのパス
 database_file = os.path.join(os.getcwd(),'youtube.db')
 
-engine = create_engine('sqlite:///' + database_file,convert_unicode=True,echo=True)
+engine = create_engine('sqlite:///' + database_file,convert_unicode=True,echo=False)
 Base = declarative_base()
 
 # db_sessionを作る
