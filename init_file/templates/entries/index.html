@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block body %}
+
+    <div>
+      <h2>動画リスト</h2>
+      <a class="button" href="{{url_for('entry')}}">Playlist</a>
+    </div>
+    <div>
+      <h2>Playlistの追加</h2>
+      <a class="button" href="{{url_for('add_playlist')}}">Push</a>
+    </div>
+    <div>
+      <h2>Playlistの削除</h2>
+      <a class="button" href="{{url_for('delete_playlist')}}">Push</a>
+    </div>
+    <div>
+      <h2>通知先フォーム</h2>
+      <a class="button" href="{{url_for('entry')}}">通知先の変更</a>
+    </div>
+  </div>
+{% endblock %}
