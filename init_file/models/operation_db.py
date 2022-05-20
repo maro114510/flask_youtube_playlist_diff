@@ -5,14 +5,14 @@ from sqlalchemy import Column,Integer,Float,String
 import os 
 
 # 整合性保持用
-from video_list import video_titles,video_ids
+# from video_list import video_titles,video_ids
 
-new_data = video_titles(video_ids())
+# new_data = video_titles(video_ids())
 
 # DBファイルのパス
 database_file = os.path.join(os.getcwd(),'youtube.db')
 
-engine = create_engine('sqlite:///' + database_file,convert_unicode=True,echo=True)
+engine = create_engine('sqlite:///' + database_file,convert_unicode=True,echo=False)
 Base = declarative_base()
 
 # db_sessionを作る
@@ -66,7 +66,7 @@ def detect_diff(new_data_):
     return dealing_db()
 
 # 最新のリストの増減に応じてDBリストのCDを行う
-def dealing_db():
+def dealing_db(new_data):
   db_data = db_session.query(Wine).all()
   db_data = [(k.video_id,k.title) for k in db_data]
   diff_data = list(set(new_data) ^ set(db_data))
